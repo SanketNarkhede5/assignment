@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install Docker Packages
+    apt:
+      name: docker-ce  
+      state: latest
+   
+  
+  handlers:
+  - name: Restart docker-ce 
+    service: name=docker-ce state=started     
+            
+
+...
+
